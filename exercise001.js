@@ -12,3 +12,25 @@ const promise = new Promise((resolve, reject) => {
 });
 
 // Your solution(s) to exercise001 here!
+
+const thenSolution = (somePromise) => {
+	somePromise.then((resolve) => { 
+		console.log(`Yay! Promise resolved with response: ${resolve}`);
+			}).catch((reject) => {
+				console.log(`Boo. Promise rejected with response: ${reject}`);
+			});
+};
+
+const awaitSolution = async (anyPromise) => {
+	try{
+		const resolve = await anyPromise;
+		console.log(`Yay! Promise resolved with response: ${resolve}`);
+	}
+	catch(reject) {
+		console.log(`Boo. Promise rejected with response: ${reject}`);
+	}
+};
+
+awaitSolution(promise);
+
+// thenSolution(promise);
